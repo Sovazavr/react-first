@@ -9,23 +9,5 @@
   grid-template-columns: 2fr 10fr;
    grid-gap: 10px; 
 }
-.Head {
-  grid-area: h;
-  background-color: cornflowerblue;
-}
-.Head img{
-  width: 60px;
-}
-.Nav{
-  grid-area: n;
-  
-  background-color: cornflowerblue;
-}
-.Content{
-  grid-area: c;
-  background-color: cornflowerblue;
-}
-.backImg {
-  width: 1000px;
-  height: 200px;
-}
+
+

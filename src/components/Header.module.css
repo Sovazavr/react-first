@@ -1,0 +1,7 @@
+.Head {
+    grid-area: h;
+    background-color: cornflowerblue;
+  }
+  .header_img{
+    width: 60px;
+  }
