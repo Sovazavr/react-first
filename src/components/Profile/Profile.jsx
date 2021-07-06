@@ -1,4 +1,6 @@
+import MyPosts from './MyPosts/MyPosts.jsx';
 import rename from './Profile.module.css'
+
 
 const Profile = () =>
 {
@@ -9,18 +11,7 @@ const Profile = () =>
       <div>
       ava + description
     </div>
-    <div className='item'>
-      My posts
-      <div>
-        new post
-      </div>
-      <div>
-        post 1
-      </div>
-      <div>
-        post 2
-      </div>
-      </div>
+    <MyPosts/>
     </div>
     )
 }
