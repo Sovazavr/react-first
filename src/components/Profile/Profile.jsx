@@ -1,15 +1,13 @@
 import MyPosts from './MyPosts/MyPosts.jsx';
 import rename from './Profile.module.css'
+import ProfileInfo from './ProfileInfo/ProfileInfo.jsx';
 
 
 const Profile = () => {
   return (
     <div>
 
-      <img className={rename.backImg} src='https://www.peku-poccuu.ru/images/city/156.jpg' />
-      <div>
-        ava + description
-      </div>
+      <ProfileInfo />
       <MyPosts />
     </div>
   )
