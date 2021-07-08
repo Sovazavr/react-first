@@ -6,7 +6,8 @@ const Post =(props) =>{
         <img src='https://viberfaq.ru/wp-content/uploads/2020/09/Parnyam-3.jpg'/>
         {props.message}
         <div>
-            <span>like</span>
+            <span>like {props.likesCount}</span>
+            
         </div>
     </div>
     )
