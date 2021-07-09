@@ -1,20 +1,10 @@
-import { NavLink } from 'react-router-dom'
+import DialogItem from './DialogItem/DialogItem'
+import Message from './Message/Message'
 import rename from './Dialogs.module.css'
 
-const DialogItem = (props) => {
-    let path = '/dialogs/' + props.id
-    return (
-        <div className={rename.dialog}>
-            <NavLink to={path}> {props.name} </NavLink>
-        </div>
-    )
-}
 
-const Message = (props) => {
-    return (
-        <div className={rename.message}>{props.message}</div>
-    )
-}
+
+
 
 const Dialogs = (props) => {
     let dialogs = [
@@ -31,7 +21,7 @@ const Dialogs = (props) => {
         { id: '2', message: 'How are you' },
         { id: '3', message: 'WAZZZAAARRR' }
     ]
-    let dialogsElements = dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id} />)
+    let dialogsElements = dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
     let messagesElements = messages.map(message => <Message message={message.message} />)
 
     return (
@@ -39,6 +29,7 @@ const Dialogs = (props) => {
 
             <div className={rename.dialogs_item}>
                 {dialogsElements}
+                
             </div>
 
             <div className={rename.messages}>
