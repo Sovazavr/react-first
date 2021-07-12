@@ -22,8 +22,8 @@
         { id: '2', message: 'How are you' },
         { id: '3', message: 'WAZZZAAARRR' }
       ] 
-      }
-      
+      },
+      sidebar: {}
   }
 
   export default state
