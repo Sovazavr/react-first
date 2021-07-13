@@ -8,15 +8,25 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
-
-
+import {ThemeProvider, createTheme} from '@material-ui/core/styles'
+import {Paper} from '@material-ui/core'
+import React, {useState} from 'react'
 
 const App = (props) => {
 
+  const [darkMode, setDarkMode]=useState(false)
+
+  const theme = createTheme({
+    palette:{
+      type: darkMode ? 'dark' :'light',
+
+    }
+  })
   return (
-   
+   <ThemeProvider theme={theme}>
+     <Paper square style={{height: '100%'}} elevation={0}>
       <div className='app-wrapper'>
-        <Header />
+        <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
 
         <Navbar />
 
@@ -37,7 +47,8 @@ const App = (props) => {
           <Route path='/settings' render={() => <Settings />} />
         </div>
       </div>
-    
+      </Paper>
+      </ThemeProvider>
   );
 }
 
