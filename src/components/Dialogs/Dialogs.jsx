@@ -2,7 +2,7 @@ import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
 import rename from './Dialogs.module.css'
 import React from 'react'
-
+import Button from '@material-ui/core/Button'
 
 
 
@@ -31,7 +31,7 @@ const Dialogs = (props) => {
                 {messagesElements}
                 <div>
                     <textarea ref={newMessage}></textarea>
-                    <button onClick={Run}>Run</button>
+                    <Button variant="contained" color="primary" onClick={Run}>Run</Button>
                 </div>
 
             </div>

@@ -12,11 +12,30 @@
 }
 .dialog a {
     text-decoration: none;
-    color: cornflowerblue;
+    color: #3F51B5;
 }
 .messages {
     padding: 20px;
 }
 .message {
     padding: 30px;
+}
+.messages textarea {
+    width: 90%;
+    height: 50px;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    -moz-appearance: none;
+    padding: 5px;
+}
+.messages button {
+    
+    border: none;
+    background-color: #3F51B5;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 20%;
+    height: 30px;
 }

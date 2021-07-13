@@ -2,7 +2,7 @@
 .Nav{
     grid-area: n;
     padding: 30px;
-    background-color: cornflowerblue;
+    background-color: #3F51B5;
 }
 .item a {
     color: white;
