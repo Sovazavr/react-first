@@ -14,19 +14,11 @@ import React, {useState} from 'react'
 
 const App = (props) => {
 
-  const [darkMode, setDarkMode]=useState(false)
-
-  const theme = createTheme({
-    palette:{
-      type: darkMode ? 'dark' :'light',
-
-    }
-  })
+  
   return (
-   <ThemeProvider theme={theme}>
-     <Paper square style={{height: '100%'}} elevation={0}>
+   
       <div className='app-wrapper'>
-        <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <Header/>
 
         <Navbar />
 
@@ -38,17 +30,15 @@ const App = (props) => {
               dialogs={props.state.messagesPage.dialogs} />} />
           <Route path='/profile' render={() =>
             <Profile
-              posts={props.state.profilePage.posts}
-              newPostText={props.state.profilePage.newPostText}
-              addPost={props.addPost}
-              updateNewPostText={props.updateNewPostText} />} />
+              profilePage={props.state.profilePage}
+              
+              dispatch={props.dispatch} />} />
           <Route path='/news' render={() => <News />} />
           <Route path='/music' render={() => <Music />} />
           <Route path='/settings' render={() => <Settings />} />
         </div>
       </div>
-      </Paper>
-      </ThemeProvider>
+      
   );
 }
 
