@@ -3,20 +3,26 @@ import Message from './Message/Message'
 import rename from './Dialogs.module.css'
 import React from 'react'
 import Button from '@material-ui/core/Button'
-
+import {updateNewMessageBodyCreator, sendMessageCreator} from '../../redux/state'
 
 
 const Dialogs = (props) => {
+    let state=props.store.getState().messagesPage
 
-    let dialogsElements = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
+    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
 
-    let messagesElements = props.messages.map(message => <Message message={message.message} />)
+    let messagesElements = state.messages.map(message => <Message message={message.message} />)
 
-    let newMessage= React.createRef()
+    
+    let newMessageBody = state.newMessageBody
 
-    let Run = () => {
-        let text=newMessage.current.value
-    alert(text)
+    let onSendMessageClick = () => {
+        props.store.dispatch(sendMessageCreator())
+    }
+
+    let onNewMessageChange = (e) => {
+       let body=e.target.value
+       props.store.dispatch(updateNewMessageBodyCreator(body))
     }
 
     return (
@@ -28,10 +34,12 @@ const Dialogs = (props) => {
             </div>
 
             <div className={rename.messages}>
-                {messagesElements}
+                <div>{messagesElements}</div>
                 <div>
-                    <textarea ref={newMessage}></textarea>
-                    <Button variant="contained" color="primary" onClick={Run}>Run</Button>
+                    <div><textarea value={newMessageBody}
+                        onChange={onNewMessageChange}
+                        placeholder='Enter you message'></textarea></div>
+                    <div><Button variant="contained" color="primary" onClick={onSendMessageClick}>Run</Button></div>
                 </div>
 
             </div>
