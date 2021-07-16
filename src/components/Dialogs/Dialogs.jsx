@@ -3,7 +3,7 @@ import Message from './Message/Message'
 import rename from './Dialogs.module.css'
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import {updateNewMessageBodyCreator, sendMessageCreator} from '../../redux/state'
+import {updateNewMessageBodyCreator, sendMessageCreator} from '../../redux/messages-reducer'
 
 
 const Dialogs = (props) => {

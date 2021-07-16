@@ -2,7 +2,7 @@ import rename from './MyPosts.module.css'
 import Post from './Post/Post'
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../redux/state'
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profile-reducer'
 
 
 const MyPosts = (props) => {
@@ -23,7 +23,10 @@ const MyPosts = (props) => {
       <h1>My posts</h1>
       <div  >
         <div>
-          <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText} className={rename.text} />
+          <textarea ref={newPostElement}
+            onChange={onPostChange}
+            value={props.newPostText}
+            className={rename.text} />
         </div>
         <div>
           <Button variant="contained" color="primary" onClick={addPost} className={rename.add}>Add post</Button>
