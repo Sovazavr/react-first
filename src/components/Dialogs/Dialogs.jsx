@@ -46,7 +46,7 @@ const Dialogs = (props) => {
                     </div>
                 </div>
                 <div>
-                    <Paper elevation={3}>
+                    <Paper elevation={5}>
                         {messagesElements.reverse()}
                     </Paper>
                 </div>

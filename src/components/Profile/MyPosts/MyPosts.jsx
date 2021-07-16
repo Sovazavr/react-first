@@ -3,7 +3,7 @@ import Post from './Post/Post'
 import React from 'react'
 import Button from '@material-ui/core/Button'
 import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profile-reducer'
-
+import Paper from '@material-ui/core/Paper';
 
 const MyPosts = (props) => {
 
@@ -17,7 +17,7 @@ const MyPosts = (props) => {
   let onPostChange = () => {//это колбэк
     let text = newPostElement.current.value
     props.updateNewPostText(text)
-    
+
   }
   return (
     <div className={rename.postsBlock}>
@@ -32,10 +32,13 @@ const MyPosts = (props) => {
         <div>
           <Button variant="contained" color="primary" onClick={onAddPost} className={rename.add}>Add post</Button>
         </div>
+
       </div>
-      <div className={rename.posts}>
-        {postsElements}
-      </div>
+      <Paper elevation={5}>
+        <div className={rename.posts}>
+          {postsElements.reverse()}
+        </div>
+      </Paper>
     </div>
   )
 }
