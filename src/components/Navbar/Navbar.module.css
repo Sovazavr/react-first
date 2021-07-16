@@ -2,7 +2,8 @@
 .Nav{
     grid-area: n;
     padding: 30px;
-    background-color: #3F51B5;
+    background-color: #3F51B5 ;
+    /*grey */
 }
 .item a {
     color: white;
@@ -10,4 +11,7 @@
 }
 .item a.active {
     color: gold;
+}
+.Button {
+    width: 100%;
 }

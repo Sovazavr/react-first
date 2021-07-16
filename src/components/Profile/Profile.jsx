@@ -1,5 +1,5 @@
 import MyPostsContainer from './MyPosts/MyPostsContainer.jsx';
-import rename from './Profile.module.css'
+
 import ProfileInfo from './ProfileInfo/ProfileInfo.jsx';
 
 
