@@ -3,17 +3,18 @@ import Message from './Message/Message'
 import rename from './Dialogs.module.css'
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import {updateNewMessageBodyCreator, sendMessageCreator} from '../../redux/messages-reducer'
-
+import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/messages-reducer'
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
 
 const Dialogs = (props) => {
-    let state=props.messagesPage
+    let state = props.messagesPage
 
     let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
 
     let messagesElements = state.messages.map(message => <Message message={message.message} />)
 
-    
+
     let newMessageBody = state.newMessageBody
 
     let onSendMessageClick = () => {
@@ -21,9 +22,9 @@ const Dialogs = (props) => {
     }
 
     let onNewMessageChange = (e) => {
-       let body=e.target.value
-       props.updateNewMessageBody(body)
-    
+        let body = e.target.value
+        props.updateNewMessageBody(body)
+
     }
 
     return (
@@ -35,13 +36,21 @@ const Dialogs = (props) => {
             </div>
 
             <div className={rename.messages}>
-                <div>{messagesElements}</div>
                 <div>
-                    <div><textarea value={newMessageBody}
-                        onChange={onNewMessageChange}
-                        placeholder='Enter you message'></textarea></div>
-                    <div><Button variant="contained" color="primary" onClick={onSendMessageClick}>Run</Button></div>
+                    <div>
+                        <TextField className={rename.textfield} id="outlined-basic" label='Enter you message' variant="outlined" value={newMessageBody}
+                        onChange={onNewMessageChange}/>
+                        </div>
+                    <div>
+                        <Button variant="contained" color="primary" onClick={onSendMessageClick}>Run</Button>
+                    </div>
                 </div>
+                <div>
+                    <Paper elevation={3}>
+                        {messagesElements.reverse()}
+                    </Paper>
+                </div>
+
 
             </div>
 

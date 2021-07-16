@@ -20,7 +20,7 @@
 .message {
     padding: 30px;
 }
-.messages textarea {
+/* .messages  {
     width: 90%;
     height: 50px;
     border-radius: 5px;
@@ -28,7 +28,7 @@
     outline: none;
     -moz-appearance: none;
     padding: 5px;
-}
+} */
 .messages button {
     
     border: none;
@@ -38,4 +38,13 @@
     border-radius: 5px;
     width: 20%;
     height: 30px;
+}
+.textfield {
+    width: 100%;
+    
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    -moz-appearance: none;
+    
 }
