@@ -11,12 +11,13 @@ const MyPosts = (props) => {
 
   let newPostElement = React.createRef()
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator())
+  let onAddPost = () => {//это колбэк
+    props.addPost()
   }
-  let onPostChange = () => {
+  let onPostChange = () => {//это колбэк
     let text = newPostElement.current.value
-    props.dispatch(updateNewPostTextActionCreator(text))
+    props.updateNewPostText(text)
+    
   }
   return (
     <div className={rename.postsBlock}>
@@ -29,7 +30,7 @@ const MyPosts = (props) => {
             className={rename.text} />
         </div>
         <div>
-          <Button variant="contained" color="primary" onClick={addPost} className={rename.add}>Add post</Button>
+          <Button variant="contained" color="primary" onClick={onAddPost} className={rename.add}>Add post</Button>
         </div>
       </div>
       <div className={rename.posts}>
