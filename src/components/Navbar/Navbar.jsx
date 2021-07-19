@@ -19,6 +19,9 @@ const Navbar = () => {
             <NavLink to='/profile' activeClassName={rename.active}>Profile</NavLink>
           </Button>
           <Button>
+            <NavLink to='/users' activeClassName={rename.active}>Users</NavLink>
+          </Button>
+          <Button>
             <NavLink to='/dialogs' activeClassName={rename.active}>Messages</NavLink>
           </Button>
           <Button>
@@ -30,6 +33,7 @@ const Navbar = () => {
           <Button>
             <NavLink to='/settings' activeClassName={rename.active}>Settings</NavLink>
           </Button>
+          
         </ButtonGroup>
 
       </div>
