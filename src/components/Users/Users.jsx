@@ -2,8 +2,18 @@ import React from 'react'
 import styles from './Users.module.css'
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
+import * as axios from 'axios'
+import userPhoto from '../../Assets/images/default_ava.jpg'
 
 let Users = (props) => {
+    if (props.users.length === 0) {
+
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            props.setUsers(response.data.items)
+        })
+
+
+    }
 
     return (
         <div>
@@ -11,8 +21,8 @@ let Users = (props) => {
                 props.users.map(u => <div key={u.id}>
                     <div className={styles.Line}>
                         <div >
-                            <img src={u.photoUrl} className={styles.usersPhoto} />
-                        {/* </div>
+                            <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.usersPhoto} />
+                            {/* </div>
                         <div> */}
                             {u.followed ? <Button className={styles.button} onClick={() => { props.unfollow(u.id) }}>UNFOLLOW</Button>
                                 : <Button className={styles.button} onClick={() => { props.follow(u.id) }}>FOLLOW</Button>}
@@ -21,11 +31,11 @@ let Users = (props) => {
 
 
                         <Paper elevation={5} className={styles.paper}>
-                            <div>{u.fullName}</div>
+                            <div>{u.name}</div>
                             <div>{u.status}</div>
 
-                            <div>{u.location.country}</div>
-                            <div>{u.location.city}</div>
+                            {/* <div>{u.location.country}</div>
+                            <div>{u.location.city}</div> */}
                         </Paper>
                     </div>
                 </div>)
