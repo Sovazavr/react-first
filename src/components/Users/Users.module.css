@@ -1,0 +1,19 @@
+.usersPhoto {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.Line {
+    display: inline-flex
+}
+
+.paper {
+    display: inline-block;
+    width: 100ch;
+    padding: 5px;
+}
+.button {
+    width: 10ch;
+}

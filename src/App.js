@@ -12,7 +12,7 @@ import { ThemeProvider, createTheme } from '@material-ui/core/styles'
 import { Paper } from '@material-ui/core'
 import React, { useState } from 'react'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
-import Users from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
   
@@ -33,7 +33,7 @@ const App = (props) => {
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
         <Route path='/settings' render={() => <Settings />} />
-        <Route path='/users' render={() => <Users />} />
+        <Route path='/users' render={() => <UsersContainer />} />
       </div>
     </div>
     
