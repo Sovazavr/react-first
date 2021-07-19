@@ -6,12 +6,15 @@
 }
 
 .Line {
-    display: inline-flex
+    display: inline-flex;
+    padding: 5px;
+    margin-left: 5%;
+    margin-right: 20%;
 }
 
 .paper {
     display: inline-block;
-    width: 100ch;
+    width: 90ch;
     padding: 5px;
 }
 .button {
