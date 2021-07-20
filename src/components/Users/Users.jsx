@@ -5,43 +5,43 @@ import Button from '@material-ui/core/Button'
 import * as axios from 'axios'
 import userPhoto from '../../Assets/images/default_ava.jpg'
 
-let Users = (props) => {
-    if (props.users.length === 0) {
-
+class Users extends React.Component {
+    
+    componentDidMount() {
         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-            props.setUsers(response.data.items)
+            this.props.setUsers(response.data.items)
         })
-
-
     }
+    render() {
+        return (
+            <div>
 
-    return (
-        <div>
-            {
-                props.users.map(u => <div key={u.id}>
-                    <div className={styles.Line}>
-                        <div >
-                            <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.usersPhoto} />
-                            {/* </div>
-                        <div> */}
-                            {u.followed ? <Button className={styles.button} onClick={() => { props.unfollow(u.id) }}>UNFOLLOW</Button>
-                                : <Button className={styles.button} onClick={() => { props.follow(u.id) }}>FOLLOW</Button>}
+                {
+                    this.props.users.map(u => <div key={u.id}>
+                        <div className={styles.Line}>
+                            <div >
+                                <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.usersPhoto} />
+                                {/* </div>
+                            <div> */}
+                                {u.followed ? <Button className={styles.button} onClick={() => { this.props.unfollow(u.id) }}>UNFOLLOW</Button>
+                                    : <Button className={styles.button} onClick={() => { this.props.follow(u.id) }}>FOLLOW</Button>}
 
+                            </div>
+
+
+                            <Paper elevation={5} className={styles.paper}>
+                                <div>{u.name}</div>
+                                <div>{u.status}</div>
+
+                                {/* <div>{u.location.country}</div>
+                                <div>{u.location.city}</div> */}
+                            </Paper>
                         </div>
-
-
-                        <Paper elevation={5} className={styles.paper}>
-                            <div>{u.name}</div>
-                            <div>{u.status}</div>
-
-                            {/* <div>{u.location.country}</div>
-                            <div>{u.location.city}</div> */}
-                        </Paper>
-                    </div>
-                </div>)
-            }
-        </div>
-    )
+                    </div>)
+                }
+            </div>
+        )
+    }
 }
 
 export default Users
