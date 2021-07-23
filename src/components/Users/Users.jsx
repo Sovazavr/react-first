@@ -2,7 +2,7 @@ import styles from './Users.module.css'
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
 import userPhoto from '../../Assets/images/default_ava.jpg'
-
+import { NavLink } from 'react-router-dom';
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
@@ -26,9 +26,9 @@ let Users = (props) => {
                 props.users.map(u => <div key={u.id}>
                     <div className={styles.Line}>
                         <div >
+                            <NavLink to={'/profile/'+u.id}>
                             <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.usersPhoto} />
-                            {/* </div>
-                    <div> */}
+                            </NavLink>
                             {u.followed ? <Button className={styles.button} onClick={() => { props.unfollow(u.id) }}>UNFOLLOW</Button>
                                 : <Button className={styles.button} onClick={() => { props.follow(u.id) }}>FOLLOW</Button>}
 

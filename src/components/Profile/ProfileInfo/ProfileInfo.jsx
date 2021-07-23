@@ -1,8 +1,11 @@
 import rename from './ProfileInfo.module.css'
 import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
+import Preloader from '../../common/preloader/preloader.js'
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if(!props.profile) {
+        return <Preloader/>
+    }
     return (
         <div>
             <Card>
@@ -10,7 +13,16 @@ const ProfileInfo = () => {
                  <img className={rename.backImg} src='https://www.peku-poccuu.ru/images/city/156.jpg' /> 
             </Card>
             <div className={rename.descriptionBlock}>
-                ava + description
+                <img src={props.profile.photos.large} />
+                <div>
+                    {props.profile.aboutMe}
+                </div>
+                <div>
+                {props.profile.contacts.facebook}
+                {props.profile.contacts.vk}
+                {props.profile.contacts.twitter}
+               
+                </div>
             </div>
         </div>
     )
