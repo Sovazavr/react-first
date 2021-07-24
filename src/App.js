@@ -8,11 +8,10 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Music from './components/Music/Music'
 import Settings from './components/Settings/Settings'
 import News from './components/News/News'
-import { ThemeProvider, createTheme } from '@material-ui/core/styles'
-import { Paper } from '@material-ui/core'
-import React, { useState } from 'react'
+import React from 'react'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import UsersContainer from './components/Users/UsersContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 const App = (props) => {
   
@@ -20,7 +19,7 @@ const App = (props) => {
   return (
   
     <div className='app-wrapper'>
-      <Header />
+      <HeaderContainer />
 
       <Navbar />
 

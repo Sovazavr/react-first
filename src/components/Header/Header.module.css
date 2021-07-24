@@ -1,8 +1,12 @@
 .Head {
-    grid-area: h;
-    background-color: #3F51B5;
-  }
-  .header_img{
-    width: 60px;
-    
-  }
+  grid-area: h;
+  background-color: #3F51B5;
+}
+
+.header_img {
+  width: 60px;
+}
+
+.loginBlock {
+  float: right;
+}
