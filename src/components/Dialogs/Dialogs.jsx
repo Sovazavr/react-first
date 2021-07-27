@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button'
 import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/messages-reducer'
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
+import {Redirect} from 'react-router-dom'
 
 const Dialogs = (props) => {
     let state = props.messagesPage
@@ -25,6 +26,9 @@ const Dialogs = (props) => {
         let body = e.target.value
         props.updateNewMessageBody(body)
 
+    }
+    if(!props.isAuth) {
+        return <Redirect to='/login'/>
     }
 
     return (

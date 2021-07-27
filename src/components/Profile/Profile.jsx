@@ -5,6 +5,7 @@ import ProfileInfo from './ProfileInfo/ProfileInfo.jsx';
 
 const Profile = (props) => {
   
+ 
   return (
     <div>
 
