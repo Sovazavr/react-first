@@ -3,17 +3,17 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
 import userPhoto from '../../Assets/images/default_ava.jpg'
 import { NavLink } from 'react-router-dom';
-import * as axios from 'axios'
-import { userAPI } from '../../api/api'
+
 
 let Users = (props) => {
+    
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
 
     let pages = []
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-    debugger
+    
     return (
         <div>
             <div>
