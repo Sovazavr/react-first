@@ -5,8 +5,9 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/messages-reducer'
 import Paper from '@material-ui/core/Paper';
-import TextField from '@material-ui/core/TextField';
-import {Redirect} from 'react-router-dom'
+
+import { Redirect } from 'react-router-dom'
+import DialogInput from './DialogTextInputForm'
 
 const Dialogs = (props) => {
     let state = props.messagesPage
@@ -27,8 +28,8 @@ const Dialogs = (props) => {
         props.updateNewMessageBody(body)
 
     }
-    if(!props.isAuth) {
-        return <Redirect to='/login'/>
+    if (!props.isAuth) {
+        return <Redirect to='/login' />
     }
 
     return (
@@ -42,9 +43,8 @@ const Dialogs = (props) => {
             <div className={rename.messages}>
                 <div>
                     <div>
-                        <TextField className={rename.textfield} id="outlined-basic" label='Enter you message' variant="outlined" value={newMessageBody}
-                        onChange={onNewMessageChange}/>
-                        </div>
+                        <DialogInput newMessageBody={newMessageBody} onNewMessageChange={onNewMessageChange}/>
+                    </div>
                     <div>
                         <Button variant="contained" color="primary" onClick={onSendMessageClick}>Run</Button>
                     </div>
