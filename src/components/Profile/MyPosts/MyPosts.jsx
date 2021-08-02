@@ -32,7 +32,7 @@ const MyPosts = (props) => {
     </div>
   )
 }
-const maxLength10 = maxLengthCreator(10)
+const maxLength300 = maxLengthCreator(300)
 const AddNewPostForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
@@ -43,7 +43,7 @@ const AddNewPostForm = (props) => {
           name="newPostText"
           
           className={rename.text}
-          validate={[required, maxLength10]} />
+          validate={[required, maxLength300]} />
       </div>
       <div>
         <button className={rename.add}>Add post</button>

@@ -1,5 +1,7 @@
 import Button from '@material-ui/core/Button';
 import {Field, reduxForm } from 'redux-form';
+import { required } from '../../Utils/Validators/validators';
+import { InputMy } from '../common/FormsControls/FormsControls';
 
 
 const LoginForm = (props) => {
@@ -7,13 +9,17 @@ const LoginForm = (props) => {
     
             <form onSubmit={props.handleSubmit}>
                 <div>
-                    <Field placeholder={'login'} name={'login'} component={'input'}/>
+                    <Field placeholder={'login'} name={'login'} 
+                    validate={[required]}
+                    component={InputMy}/>
                 </div>
                 <div>
-                    <Field placeholder={'password'} name={'password'} component={'input'}/>
+                    <Field placeholder={'password'} name={'password'} 
+                    validate={[required]}
+                    component={InputMy}/>
                 </div>
                 <div>
-                    <Field type={'checkbox'} name={'rememberMe'} component={'input'}/> remember me
+                    <Field type={'checkbox'} name={'rememberMe'} component={InputMy}/> remember me
                 </div>
                 <div>
                     <Button>log in</Button>
