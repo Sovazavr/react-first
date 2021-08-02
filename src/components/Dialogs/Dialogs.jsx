@@ -7,6 +7,8 @@ import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/mes
 import Paper from '@material-ui/core/Paper';
 import { Field, reduxForm } from 'redux-form';
 import { Redirect } from 'react-router-dom'
+import { Textarea } from '../common/FormsControls/FormsControls'
+import { maxLengthCreator, required } from '../../Utils/Validators/validators'
 
 
 const Dialogs = (props) => {
@@ -56,13 +58,17 @@ const Dialogs = (props) => {
         </div>
     )
 }
+const maxLength100=maxLengthCreator(100)
 
 const AddMessageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component="textarea" name='newMessageBody' className={rename.textfield}
-                    placeholder="Enter you message"/>
+                <Field component={Textarea} 
+                 multiline rows={2}
+                 label="Enter you message" variant="outlined"
+                name='newMessageBody' className={rename.textfield}
+                validate={[required, maxLength100]}/>
             </div>
             <div>
                 <button >Run</button>
