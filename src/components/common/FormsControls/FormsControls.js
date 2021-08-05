@@ -1,14 +1,11 @@
 import TextField from '@material-ui/core/TextField';
 import styles from './FormsControls.module.css'
-import Checkbox from '@material-ui/core/Checkbox';
-import Input from '@material-ui/core/Input';
 
 
 export const Textarea = ({ input, meta, ...props }) => {
     const hasError = meta.touched && meta.error
     return (
-        <>
-
+        <div>
             {hasError ?
                 <div >
                     <TextField error {...input} {...props} />
@@ -19,7 +16,7 @@ export const Textarea = ({ input, meta, ...props }) => {
 
                 </div>
             }
-        </>
+        </div>
     )
 }
 
@@ -28,16 +25,13 @@ export const InputMy = ({ input, meta, ...props }) => {
     return (
         <>
 
-            {hasError ?
-                <div >
-                    <Input error {...input} {...props} />
-                    <span FontColor="red">{meta.error}</span>
-                </div> :
-                <div >
-                    <Input  {...input} {...props} />
-
-                </div>
-            }
+            
+                <div className={styles.formcontrol+" "+(hasError ? styles.error :"")}>
+                    <input  {...input} {...props} />
+                    {hasError && <span >{meta.error}</span>}
+                </div> 
+                
+            
         </>
     )
 }
