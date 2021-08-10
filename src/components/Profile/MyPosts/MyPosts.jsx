@@ -1,6 +1,6 @@
 import rename from './MyPosts.module.css'
 import Post from './Post/Post'
-import React from 'react'
+import React, { PureComponent } from 'react'
 import Button from '@material-ui/core/Button'
 import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profile-reducer'
 import Paper from '@material-ui/core/Paper';
@@ -8,8 +8,8 @@ import { Field, reduxForm } from 'redux-form';
 import { maxLengthCreator, required } from '../../../Utils/Validators/validators'
 import { Textarea } from '../../common/FormsControls/FormsControls'
 
-const MyPosts = (props) => {
-  
+const MyPosts = React.memo(props => {
+
 
   let postsElements = props.posts.map(p => <Post message={p.post} likesCount={p.likesCount} />)
 
@@ -32,23 +32,25 @@ const MyPosts = (props) => {
       </Paper>
     </div>
   )
-}
+
+})
 const maxLength300 = maxLengthCreator(300)
 const AddNewPostForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <div>
-        <Field component={Textarea}
-          multiline rows={3}
-          label="Enter you post text" variant="outlined"
-          name="newPostText"
-          
-          className={rename.text}
-          validate={[required, maxLength300]} />
-      </div>
-      <div>
-        <button className={rename.add}>Add post</button>
-      </div>
+      
+        <div className={rename.text}>
+          <Field component={Textarea}
+            multiline rows={3}
+            label="Enter you post text" variant="outlined"
+            name="newPostText"
+            className={rename.textInput}
+            
+            validate={[required, maxLength300]} />
+            <button className={rename.add}>Add post</button>
+        </div>
+        
+      
     </form>
   )
 }
