@@ -27,7 +27,7 @@ import Music from '../Music/Music'
 import Settings from '../Settings/Settings'
 import News from '../News/News'
 
-const drawerWidth = '100%';
+const drawerWidth = '240';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'none',
     },
     drawer: {
-        width: drawerWidth,
+        // width: drawerWidth,
         flexShrink: 0,
         whiteSpace: 'nowrap',
     },
@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
         ...theme.mixins.toolbar,
     },
     content: {
-        width: drawerWidth,
+       
         flexGrow: 1,
         padding: theme.spacing(3),
     },

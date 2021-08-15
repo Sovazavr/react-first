@@ -6,10 +6,10 @@ import { connect } from 'react-redux'
 import { login } from '../../redux/auth-reducer';
 import { Redirect } from 'react-router';
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit,error}) => {
     return (
 
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <Field placeholder={'login'} name={'email'}
                     validate={[required]}
@@ -23,8 +23,8 @@ const LoginForm = (props) => {
             <div>
                 <Field type={'checkbox'} name={'rememberMe'} component={InputMy} /> remember me
             </div>
-            {props.error && <div>
-                {props.error}
+            {error && <div>
+                {error}
             </div>
             }
             <div>
