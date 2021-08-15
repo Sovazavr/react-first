@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button'
 import userPhoto from '../../Assets/images/default_ava.jpg'
 import { NavLink } from 'react-router-dom';
 import Paginator from '../common/Paginator/Paginator';
+import User from './User/User';
 
 
 let Users = (props) => {
@@ -21,37 +22,8 @@ let Users = (props) => {
             currentPage={props.currentPage} onPageChanged={props.onPageChanged}/>
             {
 
-                props.users.map(u => <div key={u.id}>
-                    <div className={styles.Line}>
-                        <div >
-                            <NavLink to={'/profile/' + u.id}>
-                                <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.usersPhoto} />
-                            </NavLink>
-
-                            {u.followed ? <Button disabled={props.followingInProgress.some(id => id === u.id)} className={styles.button} onClick={
-                                () => {
-                                    props.unfollow(u.id)
-                                }
-                            }>UNFOLLOW</Button>
-                                : <Button disabled={props.followingInProgress.some(id => id === u.id)} className={styles.button} onClick={
-                                    () => {
-                                        props.follow(u.id)
-                                    }
-                                }>FOLLOW</Button>
-                            }
-
-                        </div>
-
-
-                        <Paper elevation={5} className={styles.paper}>
-                            <div>{u.name}</div>
-                            <div>{u.status}</div>
-
-                            {/* <div>{u.location.country}</div>
-                        <div>{u.location.city}</div> */}
-                        </Paper>
-                    </div>
-                </div>)
+                props.users.map(u => <User key={u.id} user={u} followingInProgress={props.followingInProgress} 
+                    unfollow={props.unfollow} follow={props.follow} />)
             }
         </div>
     )
