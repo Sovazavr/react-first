@@ -1,7 +1,7 @@
 import styles from './Users.module.css'
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
-import userPhoto from '../../Assets/images/default_ava.jpg'
+
 import { NavLink } from 'react-router-dom';
 import Paginator from '../common/Paginator/Paginator';
 import User from './User/User';

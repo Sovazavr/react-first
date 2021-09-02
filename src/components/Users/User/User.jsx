@@ -1,6 +1,6 @@
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
-import userPhoto from '../../../Assets/images/default_ava.jpg'
+import userPhoto from '../../../Assets/images/default_ava.png'
 import { NavLink } from 'react-router-dom';
 import styles from '../Users.module.css'
 
