@@ -30,10 +30,10 @@ class App extends Component {
     return (
      
           <div className='app-wrapper'>
-            {/* <MiniDrawer/> */}
+             {/*<MiniDrawer/> */}
             <HeaderContainer />
 
-            <Navbar />
+            {/* <Navbar /> */}
 
 
             <div className='app-wrapper-content'>

@@ -10,3 +10,6 @@
 .loginBlock {
   float: right;
 }
+a.active {
+  color: gold;
+}
