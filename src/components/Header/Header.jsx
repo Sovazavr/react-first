@@ -2,6 +2,13 @@ import { NavLink } from 'react-router-dom';
 import rename from './Header.module.css'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import PeopleIcon from '@material-ui/icons/People';
+import ChatIcon from '@material-ui/icons/Chat';
+import NewReleasesIcon from '@material-ui/icons/NewReleases';
+import MusicNoteIcon from '@material-ui/icons/MusicNote';
+import SettingsIcon from '@material-ui/icons/Settings';
+import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 
 const Header = (props) => {
   return (
@@ -13,22 +20,22 @@ const Header = (props) => {
           variant="text"
         >
           <Button>
-            <NavLink to='/profile' activeClassName={rename.active}>Profile</NavLink>
+            <NavLink to='/profile' activeClassName={rename.active}><AccountCircleIcon fontSize="large"/></NavLink>
           </Button>
           <Button>
-            <NavLink to='/users' activeClassName={rename.active}>Users</NavLink>
+            <NavLink to='/users' activeClassName={rename.active}><PeopleIcon  fontSize="large"/></NavLink>
           </Button>
           <Button>
-            <NavLink to='/dialogs' activeClassName={rename.active}>Messages</NavLink>
+            <NavLink to='/dialogs' activeClassName={rename.active}><ChatIcon  fontSize="large"/></NavLink>
           </Button>
           <Button>
-            <NavLink to='/news' activeClassName={rename.active}>News</NavLink>
+            <NavLink to='/news' activeClassName={rename.active}><NewReleasesIcon  fontSize="large"/></NavLink>
           </Button>
           <Button>
-            <NavLink to='/music' activeClassName={rename.active}>Music</NavLink>
+            <NavLink to='/music' activeClassName={rename.active}><MusicNoteIcon  fontSize="large"/></NavLink>
           </Button>
           <Button>
-            <NavLink to='/settings' activeClassName={rename.active}>Settings</NavLink>
+            <NavLink to='/settings' activeClassName={rename.active}><SettingsIcon  fontSize="large"/></NavLink>
           </Button>
           
         </ButtonGroup>
@@ -37,8 +44,9 @@ const Header = (props) => {
       <div className={rename.loginBlock}>
         
 
-          {props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Log out</button> </div> :
+          {props.isAuth ? <><div><Button variant="text" onClick={props.logout}><MeetingRoomIcon fontSize="large"/></Button> </div></> :
         <NavLink to={'/login'}>Login</NavLink>
+        // <div>{props.login}</div>
         }
         
       </div>

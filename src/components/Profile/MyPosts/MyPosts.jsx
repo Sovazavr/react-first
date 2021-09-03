@@ -47,7 +47,8 @@ const AddNewPostForm = (props) => {
             className={rename.textInput}
             
             validate={[required, maxLength300]} />
-            <button className={rename.add}>Add post</button>
+             <button className={rename.add}>Add post</button> 
+           
         </div>
         
       
