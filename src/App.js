@@ -31,7 +31,7 @@ class App extends Component {
      
           <div className='app-wrapper'>
              {/*<MiniDrawer/> */}
-            <HeaderContainer />
+            <HeaderContainer className='app-wrapper-header'/>
 
             {/* <Navbar /> */}
 

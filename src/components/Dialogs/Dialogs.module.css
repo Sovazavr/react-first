@@ -40,7 +40,7 @@
     height: 30px;
 }
 .textfield {
-    width: 100%;
+    width: 100ch;
     
     border-radius: 5px;
     resize: none;

@@ -1,3 +1,7 @@
 
- 
+.profile-content{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around
+} 
   
