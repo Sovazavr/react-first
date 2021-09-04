@@ -1,10 +1,20 @@
 .Head {
   background-color: #3F51B5;
-  
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  height: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 }
 
 
 
+.buttonGroup{
+  justify-content: space-between;
+}
 .loginBlock {
   float: right;
 }

@@ -2,6 +2,8 @@ import styles from './Pagi.module.css'
 import { useState } from 'react'
 import Button from '@material-ui/core/Button'
 import cn from 'classnames'
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 
 let Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10 }) => {
     let pagesCount = Math.ceil(totalItemsCount / pageSize)
@@ -19,7 +21,7 @@ let Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged, portio
 
             {
                 portionNumber > 1 && 
-                <button onClick={() => { setPortionNumber(portionNumber - 1) }}>Prev</button>
+                <button onClick={() => { setPortionNumber(portionNumber - 1) }}><SkipPreviousIcon/></button>
             }
             {
                 pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber).map(
@@ -33,7 +35,7 @@ let Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged, portio
             }
             {
                 portionCount > portionNumber &&
-                <button onClick={() => { setPortionNumber(portionNumber + 1) }}>Next</button>
+                <button onClick={() => { setPortionNumber(portionNumber + 1) }}><SkipNextIcon/></button>
             }
         </div>
     )

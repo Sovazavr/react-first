@@ -12,7 +12,7 @@ export const Textarea = ({ input, meta, ...props }) => {
                     <span FontColor="red">{meta.error}</span>
                 </div> :
                 <div >
-                    <TextField  {...input} {...props} />
+                    <TextField {...input} {...props} />
 
                 </div>
             }

@@ -11,13 +11,16 @@
    
    }  
 .app-wrapper-header{
-  width: 100%; 
+  width: 100%;
+  
+  
 }
 .app-wrapper-content {
   /* grid-area: c; */
   display: flex;
-  
+  padding-top: 50px;
   justify-content: center;
   margin: 0;
+  
 }
 

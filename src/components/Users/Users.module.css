@@ -4,9 +4,7 @@
     border-radius: 30px;
     /* margin-right: 10px; */
 }
-.paginator{
-    
-}
+
 .Line {
     display: inline-flex;
     padding: 5px;
@@ -19,8 +17,9 @@
     width: 90ch;
     padding: 5px;
 }
-.button {
+.buttonFull {
     width: 10ch;
+    position: static;
 }
 
 .load {

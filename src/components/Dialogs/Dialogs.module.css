@@ -1,6 +1,7 @@
 .dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
+    /* display: grid;
+    grid-template-columns: 2fr 10fr; */
+    display: flex;
 }
 .dialogs_item {
     padding: 20px;
@@ -16,19 +17,12 @@
 }
 .messages {
     padding: 20px;
+    position: static;
 }
 .message {
     padding: 30px;
 }
-/* .messages  {
-    width: 90%;
-    height: 50px;
-    border-radius: 5px;
-    resize: none;
-    outline: none;
-    -moz-appearance: none;
-    padding: 5px;
-} */
+
 .messages button {
     
     border: none;
@@ -40,6 +34,7 @@
     height: 30px;
 }
 .textfield {
+    
     width: 100ch;
     
     border-radius: 5px;

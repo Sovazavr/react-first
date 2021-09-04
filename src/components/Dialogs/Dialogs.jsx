@@ -9,7 +9,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Redirect } from 'react-router-dom'
 import { Textarea } from '../common/FormsControls/FormsControls'
 import { maxLengthCreator, required } from '../../Utils/Validators/validators'
-
+import Divider from '@material-ui/core/Divider';
 
 const Dialogs = (props) => {
     let state = props.messagesPage
@@ -38,11 +38,13 @@ const Dialogs = (props) => {
                 {dialogsElements}
 
             </div>
-
+            <Divider orientation="vertical" flexItem />
             <div className={rename.messages}>
                 <div>
                     <div>
+                    
                        <AddMessageFormRedux onSubmit={addNewMessage}/>
+                    
                     </div>
 
                 </div>
@@ -64,7 +66,7 @@ const AddMessageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component={Textarea} 
+                <Field  component={Textarea} 
                  multiline rows={2}
                  label="Enter you message" variant="outlined"
                 name='newMessageBody' className={rename.textfield}

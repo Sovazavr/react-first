@@ -11,16 +11,19 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 
 const Header = (props) => {
+  
   return (
     <header className={rename.Head}>
     
-        <ButtonGroup
+        {/* <ButtonGroup
           orientation="horizontal"
           color="primary"
           aria-label="horizontal contained primary button group"
           variant="text"
           
-        >
+        > */}
+        
+        <div className={rename.buttonGroup}>
           <Button>
             <NavLink to='/profile' activeClassName={rename.active}><AccountCircleIcon fontSize="large" /></NavLink>
           </Button>
@@ -39,8 +42,8 @@ const Header = (props) => {
           <Button>
             <NavLink to='/settings' activeClassName={rename.active}><SettingsIcon fontSize="large" /></NavLink>
           </Button>
-
-        </ButtonGroup>
+        </div>
+        {/* </ButtonGroup> */}
      
       {/* <img className={rename.header_img} src='https://png.pngtree.com/element_our/md/20180506/md_5aeedf0005b7a.png' /> */}
       <div className={rename.loginBlock}>
@@ -52,6 +55,7 @@ const Header = (props) => {
         }
 
       </div>
+      
     </header>
   )
 }

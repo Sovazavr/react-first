@@ -16,13 +16,13 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                     </NavLink>
 
                     {user.followed ? <Button disabled={followingInProgress.some(id => id === user.id)}
-                        className={styles.button} onClick={
+                        className={styles.buttonFull} onClick={
                             () => {
                                 unfollow(user.id)
                             }
                         }>UNFOLLOW</Button>
                         : <Button disabled={followingInProgress.some(id => id === user.id)}
-                            className={styles.button} onClick={
+                            className={styles.buttonFull} onClick={
                                 () => {
                                     follow(user.id)
                                 }
